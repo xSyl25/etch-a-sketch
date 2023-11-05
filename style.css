@@ -1,0 +1,14 @@
+body {
+    background-color: #3944bc;
+}
+
+.container {
+    margin: auto;
+    padding: 0 0.5px 0.5px 0.5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 580px;
+    height: 580px;
+    background-color: #000;
+    border: 2px solid #000;
+}
