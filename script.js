@@ -7,7 +7,7 @@ let wh = 580 / n - 1;
 function createGrids() {
     let grids = document.createElement("div");
     grids.classList.add("grid");
-    grids.setAttribute("style", `width: ${wh}px; height: ${wh}px; opacity: 50%; margin: 0.5px; background-color: #fff;`);
+    grids.setAttribute("style", `width: ${wh}px; height: ${wh}px; opacity: 0%; margin: 0.5px; background-color: #fff;`);
     container.appendChild(grids);
 }
 
@@ -18,9 +18,12 @@ for(i = 0; i < (n * n); i++) {
 let grids = document.querySelectorAll(".grid");
 
 grids.forEach(grid => {
+    let increaseOpacity = 0;
     grid.addEventListener("mouseover", () => {
     const color = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
     grid.style.backgroundColor = color;
+    increaseOpacity += 10;
+    grid.style.opacity = `${increaseOpacity}%`;
 })});
 
 function random(number) {
