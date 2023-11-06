@@ -1,1 +1,3 @@
-# etch-a-sketch
+This is simple etch a sketch program where you drag your mouse across the canvas to make a drawing; the more times you hover over a tile the brighter it becomes. Clicking the button allows to change the amount of the tiles on the grid. 
+
+By combining  event listeners and functions as well as chaining functions I managed to make everything come together in this very small project. Building the interactive parts was by far the hardest part, but I am satisfied with what I have achieved here.

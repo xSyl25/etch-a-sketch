@@ -10,10 +10,10 @@ function createGrid(amount) {
     let wh = 580 / amount;
 
     for(i = 0; i < (amount * amount); i++) {
-    let tile = document.createElement("div");
-    tile.classList.add("grid");
-    tile.setAttribute("style", `width: ${wh}px; height: ${wh}px; background-color: #fff;`);
-    container.appendChild(tile);
+        let tile = document.createElement("div");
+        tile.classList.add("grid");
+        tile.setAttribute("style", `width: ${wh}px; height: ${wh}px; background-color: #fff;`);
+        container.appendChild(tile);
     }
 
     hoverEffect();
