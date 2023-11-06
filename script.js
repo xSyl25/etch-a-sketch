@@ -8,15 +8,18 @@ document.addEventListener("load", createGrid(defaultN));
 
 function createGrid(amount) {
     let wh = 580 / amount;
-    
+
     for(i = 0; i < (amount * amount); i++) {
     let tile = document.createElement("div");
     tile.classList.add("grid");
     tile.setAttribute("style", `width: ${wh}px; height: ${wh}px; background-color: #fff;`);
     container.appendChild(tile);
     }
+
+    hoverEffect();
 }
 
+function hoverEffect() {
 let tiles = document.querySelectorAll(".grid");
 
 tiles.forEach(tile => {
@@ -29,8 +32,9 @@ tiles.forEach(tile => {
     })
 });
 
-function random(number) {
-    return Math.floor(Math.random() * (number + 1));
+    function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+    }
 }
 
 btn.addEventListener("click", reset);
