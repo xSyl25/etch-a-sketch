@@ -1,14 +1,35 @@
 body {
-    background-color: #3944bc;
+    background-color: #5e66be;
+}
+
+.btnDiv {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.btn:hover {
+    opacity: 70%;
+}
+
+.btn {
+    margin-bottom: 0.8em; 
+    padding: 0.5em 2em;
+    color: #3b4074;
+    background-color: #f0ffff;
+    border: 2px solid #3b4074;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .container {
     margin: auto;
-    padding: 0 0.5px 0.5px 0.5px;
     display: flex;
     flex-wrap: wrap;
     width: 580px;
     height: 580px;
     background-color: #000;
-    border: 2px solid #000;
+    border: 35px solid #ff653e;
+    border-radius: 10px;
 }

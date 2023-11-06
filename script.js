@@ -1,31 +1,47 @@
-const body = document.querySelector("body");
 const container = document.querySelector(".container");
+const btn = document.querySelector("button");
+btn.textContent = "RESET GRID";
 
-let n = 16;
-let wh = 580 / n - 1;
+let defaultN = 16;
 
-function createGrids() {
-    let grids = document.createElement("div");
-    grids.classList.add("grid");
-    grids.setAttribute("style", `width: ${wh}px; height: ${wh}px; opacity: 0%; margin: 0.5px; background-color: #fff;`);
-    container.appendChild(grids);
+document.addEventListener("load", createGrid(defaultN));
+
+function createGrid(amount) {
+    let wh = 580 / amount;
+    
+    for(i = 0; i < (amount * amount); i++) {
+    let tile = document.createElement("div");
+    tile.classList.add("grid");
+    tile.setAttribute("style", `width: ${wh}px; height: ${wh}px; background-color: #fff;`);
+    container.appendChild(tile);
+    }
 }
 
-for(i = 0; i < (n * n); i++) {
-    createGrids();
-}
+let tiles = document.querySelectorAll(".grid");
 
-let grids = document.querySelectorAll(".grid");
-
-grids.forEach(grid => {
+tiles.forEach(tile => {
     let increaseOpacity = 0;
-    grid.addEventListener("mouseover", () => {
+    tile.addEventListener("mouseover", () => {
     const color = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-    grid.style.backgroundColor = color;
+    tile.style.backgroundColor = color;
     increaseOpacity += 10;
-    grid.style.opacity = `${increaseOpacity}%`;
-})});
+    tile.style.opacity = `${increaseOpacity}%`;
+    })
+});
 
 function random(number) {
     return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener("click", reset);
+
+function reset() {
+    let resetN = prompt("Type in the number of squares you'd like on each side:");
+    if(resetN < 1 || resetN > 100) {
+        alert("Number must be between 1 and 100.");
+        reset();
+    } else {
+        container.replaceChildren();
+        createGrid(resetN);
+    }
 }
